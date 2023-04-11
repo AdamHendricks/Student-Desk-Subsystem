@@ -1,17 +1,15 @@
-package uwcTest;
 
-//UWCPointsCalculation will extends StudentResults as StudentResults is the super class
+package za.ac.cput.calcapsgui2;
+
+
 public class UWCPointsCalculation extends StudentResults{
-
-    public UWCPointsCalculation(double mathNscPercent, double englishNscPercent, double loNscPercent,
-            double other1NscPercent, double other2NscPercent, double other3NscPercent, double other4NscPercent,
-            double other5NscPercent) {
-        super(mathNscPercent, englishNscPercent, loNscPercent, other1NscPercent, other2NscPercent, other3NscPercent,
-                other4NscPercent, other5NscPercent);
-    }
-
-    //Determining the users Math point
-    public void uwcMathPoint(double mathNscPercent){
+    
+    public UWCPointsCalculation(double mathNscPercent, double languageNscPercent,
+            double loNscPercent, double firstBestPercent, double secondBestPercent,
+            double thirdBestPercent, double additionalSub1Percent, double additionalSub2Percent){
+        super(mathNscPercent, languageNscPercent, loNscPercent, firstBestPercent, secondBestPercent, thirdBestPercent, additionalSub1Percent, additionalSub2Percent);}
+    
+     public void uwcMathPoint(double mathNscPercent){
         if(mathNscPercent < 20){
             this.mathNscPercent = 0;
         }else if(mathNscPercent >= 20 && mathNscPercent<= 29){
@@ -33,32 +31,30 @@ public class UWCPointsCalculation extends StudentResults{
         }
 
     }
-
-    //Determining the users English point
-    public void uwcEnglishPoint(double englishNscPercent){
-        if(englishNscPercent < 20){
-            this.englishNscPercent = 0;
-        }else if(englishNscPercent >= 20 && englishNscPercent<= 29){
-            this.englishNscPercent = 1;
-        }else if(englishNscPercent >= 30 && englishNscPercent <= 39){
-            this.englishNscPercent = 3;
-        }else if(englishNscPercent >= 40 && englishNscPercent <= 49){
-            this.englishNscPercent = 5;
-        }else if(englishNscPercent >= 50 && englishNscPercent <= 59){
-            this.englishNscPercent = 7;
-        }else if(englishNscPercent >= 60 && englishNscPercent <= 59){
-            this.englishNscPercent = 9;
-        }else if(englishNscPercent >= 70 && englishNscPercent <= 79){
-            this.englishNscPercent = 11;
-        }else if(englishNscPercent >= 80 && englishNscPercent <= 89){
-            this.englishNscPercent = 13;
-        }else if(englishNscPercent >= 90 && englishNscPercent <=100){
-            this.englishNscPercent = 15;
+     
+     public void uwcLanguagePoint(double languageNscPercent){
+        if(languageNscPercent < 20){
+            this.languageNscPercent = 0;
+        }else if(languageNscPercent >= 20 && languageNscPercent<= 29){
+            this.languageNscPercent = 1;
+        }else if(languageNscPercent >= 30 && languageNscPercent <= 39){
+            this.languageNscPercent = 3;
+        }else if(languageNscPercent >= 40 && languageNscPercent <= 49){
+            this.languageNscPercent = 5;
+        }else if(languageNscPercent >= 50 && languageNscPercent <= 59){
+            this.languageNscPercent = 7;
+        }else if(languageNscPercent >= 60 && languageNscPercent <= 59){
+            this.languageNscPercent = 9;
+        }else if(languageNscPercent >= 70 && languageNscPercent <= 79){
+            this.languageNscPercent = 11;
+        }else if(languageNscPercent >= 80 && languageNscPercent <= 89){
+            this.languageNscPercent = 13;
+        }else if(languageNscPercent >= 90 && languageNscPercent <=100){
+            this.languageNscPercent = 15;
         }
     }
-
-    //Determining the users Life Orientation Point
-    public void uwcLoPoint(double loNscPercent){
+    
+     public void uwcLoPoint(double loNscPercent){
         if(loNscPercent < 20){
             this.loNscPercent = 0;
         }else if(loNscPercent >= 20 && loNscPercent<= 29){
@@ -79,138 +75,122 @@ public class UWCPointsCalculation extends StudentResults{
             this.loNscPercent = 3;
         }
     }
-
-    //Determining the users points for their other subjects(1)
-    public void uwcOther1NscPoint(double other1NscPercent){
-        if(other1NscPercent < 20){
-            this.other1NscPercent = 0;
-        }else if(other1NscPercent >= 20 && other1NscPercent<= 29){
-            this.other1NscPercent = 1;
-        }else if(other1NscPercent >= 30 && other1NscPercent <= 39){
-            this.other1NscPercent = 2;
-        }else if(other1NscPercent >= 40 && other1NscPercent <= 49){
-            this.other1NscPercent = 3;
-        }else if(other1NscPercent >= 50 && other1NscPercent <= 59){
-            this.other1NscPercent = 4;
-        }else if(other1NscPercent >= 60 && other1NscPercent <= 69){
-            this.other1NscPercent = 5;
-        }else if(other1NscPercent >= 70 && other1NscPercent <= 79){
-            this.other1NscPercent = 6;
-        }else if(other1NscPercent >= 80 && other1NscPercent <= 89){
-            this.other1NscPercent = 7;
-        }else if(other1NscPercent >= 90 && other1NscPercent <=100){
-            this.other1NscPercent = 8;
+     
+     public void uwcFirstBestNscPoint(double firstBestPercent){
+        if(firstBestPercent < 20){
+            this.firstBestPercent = 0;
+        }else if(firstBestPercent >= 20 && firstBestPercent<= 29){
+            this.firstBestPercent = 1;
+        }else if(firstBestPercent >= 30 && firstBestPercent <= 39){
+            this.firstBestPercent = 2;
+        }else if(firstBestPercent >= 40 && firstBestPercent <= 49){
+            this.firstBestPercent = 3;
+        }else if(firstBestPercent >= 50 && firstBestPercent <= 59){
+            this.firstBestPercent = 4;
+        }else if(firstBestPercent >= 60 && firstBestPercent <= 69){
+            this.firstBestPercent = 5;
+        }else if(firstBestPercent >= 70 && firstBestPercent <= 79){
+            this.firstBestPercent = 6;
+        }else if(firstBestPercent >= 80 && firstBestPercent <= 89){
+            this.firstBestPercent = 7;
+        }else if(firstBestPercent >= 90 && firstBestPercent <=100){
+            this.firstBestPercent = 8;
         }
     }
-
-    //Determining the users points for their other subjects(2)
-    public void uwcOther2NscPoint(double other2NscPercent){
-        if(other2NscPercent < 20){
-            this.other2NscPercent = 0;
-        }else if(other2NscPercent >= 20 && other2NscPercent<= 29){
-            this.other2NscPercent = 1;
-        }else if(other2NscPercent >= 30 && other2NscPercent <= 39){
-            this.other2NscPercent = 2;
-        }else if(other2NscPercent >= 40 && other2NscPercent <= 49){
-            this.other2NscPercent = 3;
-        }else if(other2NscPercent >= 50 && other2NscPercent <= 59){
-            this.other2NscPercent = 4;
-        }else if(other2NscPercent >= 60 && other2NscPercent <= 69){
-            this.other2NscPercent = 5;
-        }else if(other2NscPercent >= 70 && other2NscPercent <= 79){
-            this.other2NscPercent = 6;
-        }else if(other2NscPercent >= 80 && other2NscPercent <= 89){
-            this.other2NscPercent = 7;
-        }else if(other2NscPercent >= 90 && other2NscPercent <=100){
-            this.other2NscPercent = 8;
+     
+     public void uwcSecondBestNscPoint(double secondBestPercent){
+        if(secondBestPercent < 20){
+            this.secondBestPercent = 0;
+        }else if(secondBestPercent >= 20 && secondBestPercent<= 29){
+            this.secondBestPercent = 1;
+        }else if(secondBestPercent >= 30 && secondBestPercent <= 39){
+            this.secondBestPercent = 2;
+        }else if(secondBestPercent >= 40 && secondBestPercent <= 49){
+            this.secondBestPercent = 3;
+        }else if(secondBestPercent >= 50 && secondBestPercent <= 59){
+            this.secondBestPercent = 4;
+        }else if(secondBestPercent >= 60 && secondBestPercent <= 69){
+            this.secondBestPercent = 5;
+        }else if(secondBestPercent >= 70 && secondBestPercent <= 79){
+            this.secondBestPercent = 6;
+        }else if(secondBestPercent >= 80 && secondBestPercent <= 89){
+            this.secondBestPercent = 7;
+        }else if(secondBestPercent >= 90 && secondBestPercent <=100){
+            this.secondBestPercent = 8;
         }
     }
-
-    //Determining the users points for their other subjects(3)
-    public void uwcOther3NscPoint(double other3NscPercent){
-        if(other3NscPercent < 20){
-            this.other3NscPercent = 0;
-        }else if(other3NscPercent >= 20 && other3NscPercent<= 29){
-            this.other3NscPercent = 1;
-        }else if(other3NscPercent >= 30 && other3NscPercent <= 39){
-            this.other3NscPercent = 2;
-        }else if(other3NscPercent >= 40 && other3NscPercent <= 49){
-            this.other3NscPercent = 3;
-        }else if(other3NscPercent >= 50 && other3NscPercent <= 59){
-            this.other3NscPercent = 4;
-        }else if(other3NscPercent >= 60 && other3NscPercent <= 69){
-            this.other3NscPercent = 5;
-        }else if(other3NscPercent >= 70 && other3NscPercent <= 79){
-            this.other3NscPercent = 6;
-        }else if(other3NscPercent >= 80 && other3NscPercent <= 89){
-            this.other3NscPercent = 7;
-        }else if(other3NscPercent >= 90 && other3NscPercent <=100){
-            this.other3NscPercent = 8;
+     
+      public void uwcThirdBestNscPoint(double thirdBestPercent){
+        if(thirdBestPercent < 20){
+            this.thirdBestPercent = 0;
+        }else if(thirdBestPercent >= 20 && thirdBestPercent<= 29){
+            this.thirdBestPercent = 1;
+        }else if(thirdBestPercent >= 30 && thirdBestPercent <= 39){
+            this.thirdBestPercent = 2;
+        }else if(thirdBestPercent >= 40 && thirdBestPercent <= 49){
+            this.thirdBestPercent = 3;
+        }else if(thirdBestPercent >= 50 && thirdBestPercent <= 59){
+            this.thirdBestPercent = 4;
+        }else if(thirdBestPercent >= 60 && thirdBestPercent <= 69){
+            this.thirdBestPercent = 5;
+        }else if(thirdBestPercent >= 70 && thirdBestPercent <= 79){
+            this.thirdBestPercent = 6;
+        }else if(thirdBestPercent >= 80 && thirdBestPercent <= 89){
+            this.thirdBestPercent = 7;
+        }else if(thirdBestPercent >= 90 && thirdBestPercent <=100){
+            this.thirdBestPercent = 8;
         }
     }
-
-    //Determining the users points for their other subjects(4)
-    public void uwcOther4NscPoint(double other4NscPercent){
-        if(other4NscPercent < 20){
-            this.other4NscPercent = 0;
-        }else if(other4NscPercent >= 20 && other4NscPercent<= 29){
-            this.other4NscPercent = 1;
-        }else if(other4NscPercent >= 30 && other4NscPercent <= 39){
-            this.other4NscPercent = 2;
-        }else if(other4NscPercent >= 40 && other4NscPercent <= 49){
-            this.other4NscPercent = 3;
-        }else if(other4NscPercent >= 50 && other4NscPercent <= 59){
-            this.other4NscPercent = 4;
-        }else if(other4NscPercent >= 60 && other4NscPercent <= 69){
-            this.other4NscPercent = 5;
-        }else if(other4NscPercent >= 70 && other4NscPercent <= 79){
-            this.other4NscPercent = 6;
-        }else if(other4NscPercent >= 80 && other4NscPercent <= 89){
-            this.other4NscPercent = 7;
-        }else if(other4NscPercent >= 90 && other4NscPercent <=100){
-            this.other4NscPercent = 8;
+     
+       public void uwcAdditionalSub1NscPoint(double additionalSub1Percent){
+        if(additionalSub1Percent < 20){
+            this.additionalSub1Percent = 0;
+        }else if(additionalSub1Percent >= 20 && additionalSub1Percent<= 29){
+            this.additionalSub1Percent = 1;
+        }else if(additionalSub1Percent >= 30 && additionalSub1Percent <= 39){
+            this.additionalSub1Percent = 2;
+        }else if(additionalSub1Percent >= 40 && additionalSub1Percent <= 49){
+            this.additionalSub1Percent = 3;
+        }else if(additionalSub1Percent >= 50 && additionalSub1Percent <= 59){
+            this.additionalSub1Percent = 4;
+        }else if(additionalSub1Percent >= 60 && additionalSub1Percent <= 69){
+            this.additionalSub1Percent = 5;
+        }else if(additionalSub1Percent >= 70 && additionalSub1Percent <= 79){
+            this.additionalSub1Percent = 6;
+        }else if(additionalSub1Percent >= 80 && additionalSub1Percent <= 89){
+            this.additionalSub1Percent = 7;
+        }else if(additionalSub1Percent >= 90 && additionalSub1Percent <=100){
+            this.additionalSub1Percent = 8;
         }
     }
-
-    //Determining the users points for their other subjects(5)
-    public void uwcOther5NscPoint(double other5NscPercent){
-        if(other5NscPercent < 20){
-            this.other5NscPercent = 0;
-        }else if(other5NscPercent >= 20 && other5NscPercent<= 29){
-            this.other5NscPercent = 1;
-        }else if(other5NscPercent >= 30 && other5NscPercent <= 39){
-            this.other5NscPercent = 2;
-        }else if(other5NscPercent >= 40 && other5NscPercent <= 49){
-            this.other5NscPercent = 3;
-        }else if(other5NscPercent >= 50 && other5NscPercent <= 59){
-            this.other5NscPercent = 4;
-        }else if(other5NscPercent >= 60 && other5NscPercent <= 69){
-            this.other5NscPercent = 5;
-        }else if(other5NscPercent >= 70 && other5NscPercent <= 79){
-            this.other5NscPercent = 6;
-        }else if(other5NscPercent >= 80 && other5NscPercent <= 89){
-            this.other5NscPercent = 7;
-        }else if(other5NscPercent >= 90 && other5NscPercent <=100){
-            this.other5NscPercent = 8;
+      
+        public void uwcAdditionalSub2NscPoint(double additionalSub2Percent){
+        if(additionalSub2Percent < 20){
+            this.additionalSub2Percent = 0;
+        }else if(additionalSub2Percent >= 20 && additionalSub2Percent<= 29){
+            this.additionalSub2Percent = 1;
+        }else if(additionalSub2Percent >= 30 && additionalSub2Percent <= 39){
+            this.additionalSub2Percent = 2;
+        }else if(additionalSub2Percent >= 40 && additionalSub2Percent <= 49){
+            this.additionalSub2Percent = 3;
+        }else if(additionalSub2Percent >= 50 && additionalSub2Percent <= 59){
+            this.additionalSub2Percent = 4;
+        }else if(additionalSub2Percent >= 60 && additionalSub2Percent <= 69){
+            this.additionalSub2Percent = 5;
+        }else if(additionalSub2Percent >= 70 && additionalSub2Percent <= 79){
+            this.additionalSub2Percent = 6;
+        }else if(additionalSub2Percent >= 80 && additionalSub2Percent <= 89){
+            this.additionalSub2Percent = 7;
+        }else if(additionalSub2Percent >= 90 && additionalSub2Percent <=100){
+            this.additionalSub2Percent = 8;
         }
     }
-
-    //Calculating the total UWC points and returnifn the total
-    public double pointTotal(){
-        double total = mathNscPercent + englishNscPercent + loNscPercent + other1NscPercent + other2NscPercent + other3NscPercent +
-        other4NscPercent + other5NscPercent;
+        
+         public double pointTotal(){
+        double total = mathNscPercent + languageNscPercent + loNscPercent + firstBestPercent + secondBestPercent + thirdBestPercent +
+        additionalSub1Percent + additionalSub2Percent;
         Math.round(total);
         return total;
     }
-    
-    //Overriding the toString method to output the details of the UWCPointsCalculation object
-    @Override
-    public String toString() {
-        String str = "Points: " + "\n" + "Maths: " + mathNscPercent
-        +"\n"+ "English: " + englishNscPercent +"\n" + "Life Orientation: " + loNscPercent + "\n" + "Other Subjects Points: " + "\n" +
-        "Other subject 1: " + other1NscPercent + "\n" + "Other subject 2: " + other2NscPercent + "\n" + "Other Subject 3: " + other3NscPercent + 
-        "\n" + "Other subject 4: " + other4NscPercent + "\n" + "Other subject 5: " + other5NscPercent;
-        return str;
-    }
-    
+       
 }
